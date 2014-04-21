@@ -1,0 +1,20 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  #- name: ubuntu-12.04
+  - name: centos-6.5
+
+suites:
+  - name: default
+    run_list:
+      - recipe[chef-jrockit::default]
+    attributes:
+      media_path: '/u01/media'
+      jrockit_file: 'jrockit-jdk1.6.0_45-R28.2.7-4.1.0-linux-x64.bin'
+      jrockit_install_path: '/u01/app/oracle/jrockit'
+      jrockit_base_url: 'http://servername/sw_installers/jrockit'
