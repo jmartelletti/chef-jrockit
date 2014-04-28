@@ -1,3 +1,4 @@
+# encoding: utf-8
 #
 # Cookbook Name:: chef-jrockit
 # Recipe:: default
@@ -27,7 +28,7 @@ template "#{media_path}/jrockit-silent.xml" do
   mode '0644'
   source 'silent.xml.erb'
   variables(
-    :jrockit_install_path => jrockit_install_path
+    jrockit_install_path: jrockit_install_path
   )
 end
 
@@ -41,17 +42,18 @@ end
 
 # Run the jrockit silent install.
 execute 'install_jrockit' do
-  command "#{media_path}/#{jrockit_file} -mode=silent -silent_xml=#{media_path}/jrockit-silent.xml"
+  command "#{media_path}/#{jrockit_file} -mode=silent \
+    -silent_xml=#{media_path}/jrockit-silent.xml"
   not_if { ::File.directory?(jrockit_install_path) }
 end
 
 # Load the jrocket path into a user's shell
-template "/etc/profile.d/jrockit.sh" do
+template '/etc/profile.d/jrockit.sh' do
   owner 'root'
   group 'root'
   mode '0755'
   source 'jrockit_path.sh.erb'
   variables(
-    :jrockit_install_path => jrockit_install_path
+    jrockit_install_path: jrockit_install_path
   )
 end
