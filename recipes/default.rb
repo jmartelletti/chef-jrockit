@@ -8,10 +8,10 @@
 # All rights reserved - Do Not Redistribute
 #
 
-media_path = node['media_path']
-jrockit_file = node['jrockit_file']
-jrockit_install_path = node['jrockit_install_path']
-jrockit_base_url = node['jrockit_base_url']
+media_path = node['chef_jrockit']['media_path']
+jrockit_file = node['chef_jrockit']['jrockit_file']
+jrockit_install_path = node['chef_jrockit']['jrockit_install_path']
+jrockit_base_url = node['chef_jrockit']['jrockit_base_url']
 
 jrockit_url = "#{jrockit_base_url}/#{jrockit_file}"
 

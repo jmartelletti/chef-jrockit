@@ -16,10 +16,10 @@ SPS users should contact Engineering for a URL to use.
 Attributes
 ----------
 ```ruby
-default['media_path'] = '/u01/media'
-default['jrockit_file'] = 'jrockit-jdk1.6.0_45-R28.2.7-4.1.0-linux-x64.bin'
-default['jrockit_install_path'] = '/u01/app/oracle/jrockit'
-default['jrockit_base_url'] = 'http://server.example/path/to/jrockit_dir'
+default['chef_jrockit']['media_path'] = '/u01/media'
+default['chef_jrockit']['jrockit_file'] = 'jrockit-jdk1.6.0_45-R28.2.7-4.1.0-linux-x64.bin'
+default['chef_jrockit']['jrockit_install_path'] = '/u01/app/oracle/jrockit'
+default['chef_jrockit']['jrockit_base_url'] = 'http://server.example/path/to/jrockit_dir'
 ```
 
 Required:<br>
